@@ -8,17 +8,16 @@
   align-items: center;
   // height: 100vh;
 
-  padding: 1rem;
+  // padding: 1rem;
   position: relative;
 
   &__inner {
-    background-color: #fff;
     position: relative;
     z-index: 1;
     padding: 1rem;
   }
 
-  &__canvas canvas {
+  &__canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -30,6 +29,7 @@
       padding: 2rem;
       width: 600px;
       margin: 0 auto;
+    border: 4px solid  #fff;
     }
   }
 }
