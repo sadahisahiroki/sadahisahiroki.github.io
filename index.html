@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link href="" rel="canonical">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="img/ogp.jpg">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <link href="./css/common.css" rel="stylesheet" media="all">
+  </head>
+  <body class="index" id="body">
+    <article class="main">
+      <div class="main__inner" id="mainInner">
+        <div class="header" data-aos="fade-up">
+          <h1 class="header__ttl">
+             私はSADAHISA Hiroki</h1>
+          <p class="mtHalf">マークアップエンジニアです。</p>
+        </div>
+        <section class="sec" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="sec__ttl">興味関心の対象</h2>
+          <ul class="sec__lists">
+            <li class="sec__list">インターフェースの実装
+              <p>統一され、過剰でないインターフェースについて考えたり実装したりするのが好きです。</p>
+            </li>
+            <li class="sec__list">CSS設計
+              <p>
+                 主にBEMに則ることが多いです。</p>
+            </li>
+            <li class="sec__list">CSS/JSを利用したアニメーション/インタラクションの実装</li>
+          </ul>
+          <p class="sec__txt">
+             業務以外の内容として、これまでに下記の事項を追っています。</p>
+          <ul class="sec__lists">
+            <li class="sec__list">コンピュータを介したビジュアル/サウンドデザインにかかる言語/ツールなど
+              <ul class="sec__child-lists">
+                <li class="sec__child-list">
+                   Processing</li>
+                <li class="sec__child-list">
+                   GLSL</li>
+                <li class="sec__child-list">
+                   TidalCycles</li>
+                <li class="sec__child-list">
+                   cables</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section class="sec" data-aos="fade-up">
+          <h2 class="sec__ttl">使用言語</h2>
+          <ul class="sec__lists">
+            <li class="sec__list">HTML / Pug / Haml</li>
+            <li class="sec__list mt0">CSS / Sass / Less</li>
+            <li class="sec__list mt0">JavaScript / CoffeeScript</li>
+          </ul>
+        </section>
+        <section class="sec" data-aos="fade-up">
+          <h2 class="sec__ttl">やっていること</h2>
+          <ul class="sec__lists">
+            <li class="sec__list">静的サイトの作成
+              <ul class="sec__child-lists">
+                <li class="sec__child-list">
+                   アニメーション/インタラクション要素のあるキャンペーンサイト</li>
+                <li class="sec__child-list">
+                    小規模コーポレートサイト(~50P程度)</li>
+              </ul>
+            </li>
+            <li class="sec__list">動的サイトの改修/保守
+              <ul class="sec__child-lists">
+                <li class="sec__child-list">
+                   PHPで組まれた衣料ブランドサイトの改修、PHPビュー部分の改修など </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="main__canvas" id="canvas"></div>
+    </article>
+    <script id="vertexShader" type="x-shader/x-vertex">
+          varying vec2 vUv;
+        
+          void main() {
+            vUv = uv;
+            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+            gl_Position = projectionMatrix * mvPosition;
+          }
+        </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      uniform float time;
+      uniform vec2 resolution;
+    
+      uniform sampler2D texture;
+    
+      varying vec2 vUv;
+    
+      float random (in vec2 st) {
+          return fract(sin(dot(st.xy,
+                               vec2(12.9898,78.233)))*
+              43758.5453123);
+      }
+    
+      // Based on Morgan McGuire @morgan3d
+      // https://www.shadertoy.com/view/4dS3Wd
+      float noise (in vec2 st) {
+          vec2 i = floor(st);
+          vec2 f = fract(st);
+    
+          // Four corners in 2D of a tile
+          float a = random(i);
+          float b = random(i + vec2(1.0, 0.0));
+          float c = random(i + vec2(0.0, 1.0));
+          float d = random(i + vec2(1.0, 1.0));
+    
+          vec2 u = f * f * (3.0 - 2.0 * f);
+    
+          return mix(a, b, u.x) +
+                  (c - a)* u.y * (1.0 - u.x) +
+                  (d - b) * u.x * u.y;
+      }
+    
+      #define OCTAVES 5
+      float fbm (in vec2 st) {
+          // Initial values
+          float value = 0.0;
+          float amplitude = .5;
+          float frequency = 0.;
+          //
+          // Loop of octaves
+          for (int i = 0; i < OCTAVES; i++) {
+              value += amplitude * noise(st);
+              st *= 2.;
+              amplitude *= .5;
+          }
+          return value;
+      }
+    
+      void main( void ) {
+        float t = time*.1;
+        float c = 0.;
+        
+        vec2 p = ( gl_FragCoord.xy * 2. - resolution.xy ) / min(resolution.x, resolution.y);
+        
+        for(float i = 1.; i < 3.; i++) {
+          
+          vec2 n = vec2(p*noise(vec2(fbm(p.yx-t*i))));
+    
+          c += 0.05 / abs(2. - length(p+n));
+          //c -= abs(length(p)-noise(n*i)) / dot(p, p);
+        }
+    
+    
+    
+        gl_FragColor = vec4( vec3( c*.9, c*.9, c), 1.0 );
+    
+      }
+    </script>
+    <script src="./js/libs.js"></script>
+    <script src="./js/common.js"></script>
+  </body>
+</html>
