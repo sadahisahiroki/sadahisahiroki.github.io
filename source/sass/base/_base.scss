@@ -13,18 +13,13 @@
   font-weight: 500;
   src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular"), local("游ゴシック");
 }
-@font-face {
-  font-family: "MyYuGothic";
-  font-weight: bold;
-  src: local("YuGothic-Bold"), local("Yu Gothic");
-}
 
 html {
   font-family: MyYuGothic, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   line-height: 1.6;
   color: #000;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 75%;
 }
 body {
   width: 100%;
@@ -36,9 +31,12 @@ body {
   }
 }
 
-// h1, h2, h3, h4, h5, h6 {
-//   font-weight: normal;
-// }
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
 
 p {
   margin-top: 1rem;
@@ -47,6 +45,10 @@ p {
 em {
   font-style: normal;
   font-weight: bold;
+}
+
+small {
+  font-size: .86rem;
 }
 
 //

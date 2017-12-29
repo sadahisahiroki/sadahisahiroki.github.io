@@ -1,55 +1,88 @@
 
 //
-// .selector
+// .main
 //
 //
-.selector {
-  @media screen and (max-width: 767px) {
+.main {
+  @include df;
+  align-items: center;
+  // height: 100vh;
+
+  padding: 1rem;
+  position: relative;
+
+  &__inner {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+  }
+
+  &__canvas canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   @media print, screen and (min-width: 768px) {
+    height: 100vh;
+
+    &__inner {
+      padding: 2rem;
+      width: 600px;
+      margin: 0 auto;
+    }
   }
 }
 
 //
-// .selector
+// .lead
 //
 //
-.selector {
-  @media screen and (max-width: 767px) {
-  }
-  @media print, screen and (min-width: 768px) {
-  }
-}
-
-//
-// .selector
-//
-//
-.selector {
-  @media screen and (max-width: 767px) {
-  }
-  @media print, screen and (min-width: 768px) {
+.lead {
+  &__txt {
+    margin-top: 0;
+    padding: 0 1rem 2rem;
+    font-size: 13vw;
   }
 }
 
 //
-// .selector
+// .sec
 //
 //
-.selector {
-  @media screen and (max-width: 767px) {
-  }
-  @media print, screen and (min-width: 768px) {
-  }
-}
+.sec {
+  margin-top: 2rem;
 
-//
-// .selector
-//
-//
-.selector {
-  @media screen and (max-width: 767px) {
+  &__lists {
+    margin-top: .5rem;
+    p {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
   }
-  @media print, screen and (min-width: 768px) {
+  &__list {
+    + li {
+      margin-top: 1rem;
+    }
+
+    &:before {
+      content: "○";
+      display: inline-block;
+    }
+  }
+
+  &__child-lists {
+    margin-left: 1rem;
+  }
+  &__child-list {
+
+    &:before {
+      content: "・";
+      display: inline-block;
+    }
+  }
+
+  &__txt {
+    margin-top: 2rem;
   }
 }

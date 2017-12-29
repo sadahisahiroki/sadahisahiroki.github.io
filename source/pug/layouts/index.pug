@@ -34,8 +34,9 @@ html(lang='ja' prefix="og: http://ogp.me/ns#")
     link(href= rootPath + 'css/common.css', rel='stylesheet', media='all')
   body#body(class= currentPage)
     include ../partial/components/header.pug
-    article.c-main
+    article.main
       block main
     include ../partial/components/footer.pug
+    include ../partial/glsl.pug
     script(src= rootPath + "js/libs.js")
     script(src= rootPath + "js/common.js")

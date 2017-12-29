@@ -11,3 +11,63 @@ block setting
 //- ////////////////////
 
 block main
+  .main__inner#mainInner
+    .header(data-aos="fade-up")
+      h1.header__ttl 
+        | 私はSADAHISA Hiroki
+      p.mtHalf
+        | マークアップエンジニアです。
+    section.sec(data-aos="fade-up" data-aos-delay="200")
+      h2.sec__ttl
+        | 興味関心の対象
+      ul.sec__lists
+        li.sec__list
+          | インターフェースの実装
+          p
+            | 統一され、過剰でないインターフェースについて考えたり実装したりするのが好きです。
+        li.sec__list
+          | CSS設計
+          p 
+            | 主にBEMに則ることが多いです。
+        li.sec__list
+          | CSS/JSを利用したアニメーション/インタラクションの実装
+      p.sec__txt 
+        | 業務以外の内容として、これまでに下記の事項をやっています。
+      ul.sec__lists
+        li.sec__list
+          | プログラミングを介したビジュアル/サウンドデザイン
+          ul.sec__child-lists
+            li.sec__child-list 
+              | Processing
+            li.sec__child-list 
+              | GLSL
+            li.sec__child-list 
+              | TidalCycles
+    section.sec(data-aos="fade-up")
+      h2.sec__ttl
+        | 使用言語
+      ul.sec__lists
+        li.sec__list
+          | HTML / Pug / Haml
+        li.sec__list.mt0
+          | CSS / Sass / Less
+        li.sec__list.mt0
+          | JavaScript / CoffeeScript
+    section.sec(data-aos="fade-up")
+      h2.sec__ttl
+        | やっていること
+
+      ul.sec__lists
+        li.sec__list
+          | 静的サイトの作成
+          ul.sec__child-lists
+            li.sec__child-list 
+              | アニメーション/インタラクション要素のあるキャンペーンサイト
+            li.sec__child-list 
+              |  小規模コーポレートサイト(~50P程度)
+        li.sec__list
+          | 動的サイトの改修/保守
+          ul.sec__child-lists
+            li.sec__child-list 
+              | PHPで組まれた衣料ブランドサイトの改修、PHPビュー部分の改修など 
+  //- #canvas.main__canvas
