@@ -1,0 +1,97 @@
+////////////////////
+//
+// base
+//
+////////////////////
+
+//
+// font
+//
+//
+@font-face {
+  font-family: "MyYuGothic";
+  font-weight: 500;
+  src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular"), local("游ゴシック");
+}
+@font-face {
+  font-family: "MyYuGothic";
+  font-weight: bold;
+  src: local("YuGothic-Bold"), local("Yu Gothic");
+}
+
+html {
+  font-family: MyYuGothic, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  color: #000;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body {
+  width: 100%;
+}
+@media print, screen and (min-width: 768px) {
+  body {
+    display: table;
+    table-layout: fixed;
+  }
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//   font-weight: normal;
+// }
+
+p {
+  margin-top: 1rem;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+//
+// ul,ol,dl
+//
+//
+ul, dl, ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+table {
+  th, td {
+    text-align: left;
+    vertical-align: top;
+  }
+}
+
+//
+// img
+//
+//
+img {
+  width: 100%;
+  height: auto;
+}
+@media print, screen and (min-width: 768px) {
+  img {
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+//
+// a
+//
+//
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transition: opacity .2s;
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  &:hover, &:active, &:focus {
+    opacity: .8;
+  }
+}
