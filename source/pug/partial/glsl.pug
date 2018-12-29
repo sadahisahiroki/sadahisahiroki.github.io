@@ -1,13 +1,13 @@
 .
   <script id="vertexShader" type="x-shader/x-vertex">
-        varying vec2 vUv;
-      
-        void main() {
-          vUv = uv;
-          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-          gl_Position = projectionMatrix * mvPosition;
-        }
-      </script>
+    varying vec2 vUv;
+  
+    void main() {
+      vUv = uv;
+      vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+      gl_Position = projectionMatrix * mvPosition;
+    }
+  </script>
   <script id="fragmentShader" type="x-shader/x-fragment">
     uniform float time;
     uniform vec2 resolution;
@@ -58,22 +58,26 @@
     }
 
     void main( void ) {
-      float t = time*.1;
+
+      vec2 p = ( gl_FragCoord.xy * 1. - resolution ) / min(resolution.x, resolution.y);
       float c = 0.;
       
-      vec2 p = ( gl_FragCoord.xy * 2. - resolution.xy ) / min(resolution.x, resolution.y);
-      
-      for(float i = 1.; i < 3.; i++) {
+      for(float i = 0.; i < 3.; i++) {
+        float j = i + 1.;
+        p.x += noise(p+j+cos(time)*.1 );
+        p.y += noise(p+j+sin(time*.1)*.2 );
         
-        vec2 n = vec2(p*noise(vec2(fbm(p.yx-t*i))));
-
-        c += 0.05 / abs(2. - length(p+n));
-        //c -= abs(length(p)-noise(n*i)) / dot(p, p);
+        //p -= fbm( vec2 ( noise(p) ) );
       }
+      p *= fbm( vec2 ( p + time*.1 ) );
+      
+      
+      
+      p = vec2(p.x-.2, p.y-.4);
+      c = 0.45/length(p-noise(p+time)*.01 );
+      
 
-
-
-      gl_FragColor = vec4( vec3( c*.9, c*.9, c), 1.0 );
+      gl_FragColor = vec4( vec3(c*.95,c*.99,c*.95), 1.0 );
 
     }
   </script>

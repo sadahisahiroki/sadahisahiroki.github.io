@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 ////////////////////
 //
-// main
+// common
 //
 ////////////////////
 
@@ -9,8 +9,6 @@
 // base
 //
 //
-@import 'libs/bourbon/bourbon';
-@import 'libs/neat/neat';
 @import 'base/variable';
 @import 'base/mixin';
 @import 'base/sanitize';
@@ -21,17 +19,19 @@
 // libs
 //
 //
-@import 'libs/aos/aos';
+@import "libs/aos/aos";
 
 //
 // components
 //
 //
+// @import 'components/header';
+// @import 'components/footer';
 
 //
 // pages
 //
 //
 .index {
-  @import 'pages/index';
+  @import 'pages/index/index';
 }

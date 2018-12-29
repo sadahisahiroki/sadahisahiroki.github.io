@@ -3,6 +3,17 @@
 // mixin
 //
 ////////////////////
+@mixin sp-width($w: 580vw) {
+  width: $w/640*100;
+  margin-right: auto;
+  margin-left: auto;
+}
+@mixin pc-width($w: 970px) {
+  width: $w;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 // 中央寄せ
 @mixin center {
   position: absolute;
@@ -23,4 +34,12 @@
 @mixin df {
   display: flex;
   flex-wrap: wrap;
+}
+
+@mixin square($w: 1rem, $h: 1rem, $line: 1px, $c: #000) {
+  @include pseudo;
+  border: $line solid $c;
+  // transform: rotate(45deg);
+  width: $w;
+  height: $h;
 }

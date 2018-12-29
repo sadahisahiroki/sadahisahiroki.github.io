@@ -1,8 +1,6 @@
-const browserStateChange = require("./utils/browserStateChange");
+import AOS from "aos";
 
 AOS.init({
-  duration: 800,
-  easing: "ease-out-quad",
   once: true
 });
 
@@ -16,7 +14,6 @@ let uniforms;
 
 const w = window.innerWidth;
 const h = window.innerHeight;
-
 
 init();
 animate();
@@ -50,11 +47,22 @@ function init() {
   container.appendChild(renderer.domElement);
 
   onWindowResize();
-  browserStateChange.resize(onWindowResize);
-
+  // var resizeTimer;
+  // var interval = Math.floor(1000 / 60 * 10);
+   
+  // window.addEventListener('resize', function (event) {
+  //   if (resizeTimer !== false) {
+  //     clearTimeout(resizeTimer);
+  //   }
+  //   resizeTimer = setTimeout(function () {
+  //     console.log("test");
+  //     onWindowResize();
+  //   }, interval);
+  // });
 }
 
 function onWindowResize(e) {
+  console.log("test2");
 
   uniforms.resolution.value.x = w;
   uniforms.resolution.value.y = h;

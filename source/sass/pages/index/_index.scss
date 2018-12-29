@@ -1,0 +1,105 @@
+
+//
+// .main
+//
+//
+.main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  @media screen and (max-width: 767px) {
+    background-color: rgba(255, 255, 255, .8);
+    &__inner {
+      padding: 1rem (28vw/640*100) 2rem;
+    }
+  }
+  @media print, screen and (min-width: 768px) {
+    background-color: rgba(255, 255, 255, .6);
+    &__inner {
+      padding: 2rem 0 4rem;
+      width: 40em;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 1024px) {
+    }
+  }
+  @media print, screen and (min-width: 1025px) {
+  }
+}
+
+//
+// .block
+//
+//
+.block {
+  margin-top: 3rem;
+  @media screen and (max-width: 767px) {
+  }
+  @media print, screen and (min-width: 768px) {
+    @media screen and (max-width: 1024px) {
+    }
+  }
+  @media print, screen and (min-width: 1025px) {
+  }
+}
+
+//
+// .child-block
+//
+//
+.child-block {
+  margin-top: 1rem;
+  @media screen and (max-width: 767px) {
+  }
+  @media print, screen and (min-width: 768px) {
+    @media screen and (max-width: 1024px) {
+    }
+  }
+  @media print, screen and (min-width: 1025px) {
+  }
+}
+
+//
+// .interests
+//
+//
+.interests {
+  &__lists {
+    li {
+      margin-top: 1rem;
+    }
+  }
+  @media screen and (max-width: 767px) {
+  }
+  @media print, screen and (min-width: 768px) {
+    @media screen and (max-width: 1024px) {
+    }
+  }
+  @media print, screen and (min-width: 1025px) {
+  }
+}
+
+
+//
+// .canvas
+//
+//
+.canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+  @media screen and (max-width: 767px) {
+  }
+  @media print, screen and (min-width: 768px) {
+    @media screen and (max-width: 1024px) {
+    }
+  }
+  @media print, screen and (min-width: 1025px) {
+  }
+}
+

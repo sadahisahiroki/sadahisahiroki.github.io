@@ -3,13 +3,13 @@
 // helper
 //
 ////////////////////
-@media screen and (max-width: 767px) {
-  .pc {
+@media print, screen and (min-width: 768px) {
+  .sp {
     display: none;
   }
 }
-@media print, screen and (min-width: 768px) {
-  .sp {
+@media screen and (max-width: 767px) {
+  .pc {
     display: none;
   }
 }
@@ -23,9 +23,17 @@
 }
 
 .mtHalf {
-  margin-top: .5rem !important;
+  margin-top: .5em !important;
 }
 
 .text-align-center {
   text-align: center !important;
+}
+
+.hidden {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
 }

@@ -10,9 +10,8 @@ class BrowserStateChange {
   trigger(type, func, fps) {
     let timer = undefined;
     const frameTime = 1000 / fps;
-    const $window = $(window);
 
-    $window.on(type, () => {
+    window.addEventListener(type, () => {
       if (timer !== false) {
         clearTimeout(timer);
       }
@@ -23,6 +22,7 @@ class BrowserStateChange {
     });
   }
   resize(func) {
+    console.log("resize");
     return this.trigger("resize", func, 45);
   }
   scroll(func) {

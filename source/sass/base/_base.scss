@@ -3,11 +3,6 @@
 // base
 //
 ////////////////////
-
-//
-// font
-//
-//
 @font-face {
   font-family: "MyYuGothic";
   font-weight: 500;
@@ -17,15 +12,72 @@
 html {
   font-family: MyYuGothic, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   line-height: 1.6;
-  color: #fff;
+  color: #333;
   box-sizing: border-box;
-  font-size: 75%;
-  background-color: #000;
+  font-size: 87.5%;
+  // &:before {
+  //   @include pseudo;
+  //   @include center;
+  //   position: fixed;
+  //   z-index: 100;
+  //   width: 1px;
+  //   height: 100vh;
+  //   background-color: rgba(0, 0, 0, .1);
+  // }
 }
+
 body {
   width: 100%;
+  // @media screen and (max-width: 767px) {
+  //   &:before {
+  //     @include pseudo;
+  //     @include center;
+  //     position: fixed;
+  //     z-index: 100;
+  //     width: 1px;
+  //     height: 100vh;
+  //     background-color: rgba(0, 0, 0, .1);
+  //     margin-left: 30vw/640*100;
+  //   }
+  //   &:after {
+  //     @include pseudo;
+  //     @include center;
+  //     position: fixed;
+  //     z-index: 100;
+  //     width: 1px;
+  //     height: 100vh;
+  //     background-color: rgba(0, 0, 0, .1);
+  //     margin-right: 30vw/640*100;
+  //   }
+  // }
+  // @media print, screen and (min-width: 768px) {
+  //   &:before {
+  //     @include pseudo;
+  //     @include center;
+  //     position: fixed;
+  //     z-index: 100;
+  //     width: 1px;
+  //     height: 100vh;
+  //     background-color: rgba(0, 0, 0, .1);
+  //     left: -970px;
+  //   }
+  //   &:after {
+  //     @include pseudo;
+  //     @include center;
+  //     position: fixed;
+  //     z-index: 100;
+  //     width: 1px;
+  //     height: 100vh;
+  //     background-color: rgba(0, 0, 0, .1);
+  //     right: -970px;
+  //   }
+  // }
 }
+
 @media print, screen and (min-width: 768px) {
+  .c-main {
+    min-width: 970px;
+  }
   body {
     display: table;
     table-layout: fixed;
@@ -33,23 +85,33 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-}
-h2 {
   font-size: 1.5rem;
 }
-
-p {
-  margin-top: 1rem;
+h2 {
+  font-size: 1.25rem;
+}
+h3 {
+  font-size: 1.125rem;
 }
 
-em {
+h1, h2, h3 {
+  + p {
+    margin-top: 0;
+  }
+}
+
+* + p {
+  margin-top: 1em;
+}
+
+em, strong {
   font-style: normal;
   font-weight: bold;
 }
 
-small {
-  font-size: .86rem;
+small, sup {
+  display: inline-block;
+  font-size: .86em;
 }
 
 //
@@ -61,12 +123,6 @@ ul, dl, ol {
   padding: 0;
 }
 
-table {
-  th, td {
-    text-align: left;
-    vertical-align: top;
-  }
-}
 
 //
 // img
@@ -76,7 +132,10 @@ img {
   width: 100%;
   height: auto;
 }
-@media print, screen and (min-width: 768px) {
+
+// @media screen and (max-width: 767px) {
+// }
+@media screen and (min-width: 768px) {
   img {
     max-width: 100%;
     width: auto;
@@ -88,13 +147,9 @@ img {
 //
 //
 a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  transition: opacity .2s;
-  img {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  &:hover, &:active, &:focus {
-    opacity: .8;
+  color: #000;
+  border-bottom: 1px dashed;
+  &:hover, &:focus, &:active, {
+    border: none;
   }
 }

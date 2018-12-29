@@ -4,72 +4,131 @@ block setting
   - rootPath = "./"
   - currentPage = "index"
 
-  - title = ""
+  - title = "SADAHISA Hiroki"
   - canonical = ""
-  - description = ""
+  - description = "わたしはマークアップエンジニアです。"
 
+  - type = "website"
+  
 //- ////////////////////
 
 block main
-  .main__inner#mainInner
-    .header(data-aos="fade-up")
-      h1.header__ttl 
-        | 私はSADAHISA Hiroki
-      p.mtHalf
-        | マークアップエンジニアです。
-    section.sec(data-aos="fade-up" data-aos-delay="200")
-      h2.sec__ttl
-        | 興味関心の対象
-      ul.sec__lists
-        li.sec__list
-          | インターフェースの実装
+  .main__inner
+    h1.main__ttl(data-aos="custom-fade-in")
+      span
+        | SADAHISA Hiroki
+        span
+    p
+      | マークアップエンジニアです。
+    section.block
+      h2.block__ttl(data-aos="custom-fade-in")
+        span
+          | 経歴
+          span
+      p
+        | 大学(商学部)卒業後、Web制作にかんする職業訓練を半年間受講。そののち職業訓練を運営していた企業にて半年間パート社員として引き続きWeb制作業務に従事。
+      p
+        | 2014年4月よりWeb・グラフィックデザインの制作会社(現職)に就職。
+      p
+        | これまで百貨店の催事特設サイト、メンズファッションインナーのブランドサイトの保守とリニューアル、その他小規模(~30ページ前後)なコーポレートサイトの構築などを行ってきております。
+    section.block
+      h2.block__ttl(data-aos="custom-fade-in")
+        span
+          | 興味関心のある分野
+          span
+      ul.block__lists.interests__lists
+        li
+          h3(data-aos="custom-fade-in")
+            span
+              | CSS設計
+              span
           p
-            | 統一され、過剰でないインターフェースについて考えたり実装したりするのが好きです。
-        li.sec__list
-          | CSS設計
-          p 
-            | 主にBEMに則ることが多いです。
-        li.sec__list
-          | CSS/JSを利用したアニメーション/インタラクションの実装
-      p.sec__txt 
-        | 業務以外の内容として、これまでに下記の事項を追っています。
-      ul.sec__lists
-        li.sec__list
-          | コンピュータを介したビジュアル/サウンドデザインにかかる言語/ツールなど
-          ul.sec__child-lists
-            li.sec__child-list 
-              | Processing
-            li.sec__child-list 
-              | GLSL
-            li.sec__child-list 
-              | TidalCycles
-            li.sec__child-list 
-              | cables
-    section.sec(data-aos="fade-up")
-      h2.sec__ttl
-        | 使用言語
-      ul.sec__lists
-        li.sec__list
-          | HTML / Pug / Haml
-        li.sec__list.mt0
-          | CSS / Sass / Less
-        li.sec__list.mt0
-          | JavaScript / CoffeeScript
-    section.sec(data-aos="fade-up")
-      h2.sec__ttl
-        | やっていること
-
-      ul.sec__lists
-        li.sec__list
-          | 静的サイトの作成
-          ul.sec__child-lists
-            li.sec__child-list 
-              | アニメーション/インタラクション要素のあるキャンペーンサイト
-            li.sec__child-list 
-              |  小規模コーポレートサイト(~50P程度)
-        li.sec__list
-          | 動的サイトの改修/保守
-          ul.sec__child-lists
-            li.sec__child-list 
-              | PHPで組まれた衣料ブランドサイトの改修、PHPビュー部分の改修など 
-  #canvas.main__canvas
+            | BEMなどが好きです。
+            br
+            | デザインにおける規律や一貫性や整合性、反復などがマークアップを通して実装できるときが最も良いなと感じます。同時にそれらの規律はユーザーがサイトを利用する上で有用であると考えています。
+        li
+          h3(data-aos="custom-fade-in")
+            span
+              | CSS/JSを使ったインタラクション・アニメーションの実装
+              span
+          p
+            | ユーザーの操作に合わせた微細なモーションの実装が好きです。
+        li
+          h3(data-aos="custom-fade-in")
+            span
+              | 音とコンピュータ
+              span
+          p
+            | 最近はMax/MSPをよく触っています(
+            a(href="https://soundcloud.com/c0de4/sets/max-msp-beap" target="_blank" rel="noopener")
+              | 制作物はこちら
+            | )。
+          p
+            | Generative art/Live codingの分野について色々齧っており、これまでにProcessing/GLSL/TidalCyclesなどを触ってきました。
+          p
+            | GLSL 制作例
+            br
+            a(href="http://glslsandbox.com/e#42231.0" target="_blank" rel="noopener")
+              | http://glslsandbox.com/e#42231.0
+            br
+            a(href="http://glslsandbox.com/e#49740.11" target="_blank" rel="noopener")
+              | http://glslsandbox.com/e#49740.11
+            br
+            a(href="http://glslsandbox.com/e#41464.0" target="_blank" rel="noopener")
+              | http://glslsandbox.com/e#41464.0
+            br
+            a(href="http://glslsandbox.com/e#41410.2" target="_blank" rel="noopener")
+              | http://glslsandbox.com/e#41410.2
+    section.block
+      h2.block__ttl(data-aos="custom-fade-in")
+        span
+          | 使用言語とツール
+          span
+      p
+        small
+          | ※()内は以前によく使用していたもの。
+      section.child-block
+        h3(data-aos="custom-fade-in")
+          span
+            | 主な使用言語
+            span
+        ul
+          li
+            | HTML/Pug/(Haml)
+          li
+            | CSS/Scss/
+          li
+            | JS(ES6)/(CoffeeScript)
+      section.child-block
+        h4(data-aos="custom-fade-in")
+          span
+            | 触ったことのある言語やライブラリその他
+            span
+        ul
+          li
+            | Vue.js
+            sup ※
+          li
+            | WordPress
+            sup ※
+          li
+            | PHP(既にあるサイトのビュー部分の変更など)
+          li
+            | Less
+          li
+            | Processing/GLSL
+        p
+          small
+            | ※静的サイトにてブログやニュースなどの表示が必要な部分をWordPress REST API+Vue.jsで構築したことがあります。
+      section.child-block
+        h3(data-aos="custom-fade-in")
+          span
+            | ツール
+            span
+        ul
+          li
+            | Gulp/Webpack/(Middleman)
+          li
+            | Git/Bitbucket/SourceTree
+          li
+            | SublimeText
