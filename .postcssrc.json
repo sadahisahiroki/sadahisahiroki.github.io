@@ -4,8 +4,8 @@
     "postcss-sorting",
     "csswring"
   ],
-  "input": "./css/common.css",
-  "output": "./css/common.css",
+  "input": "./docs/common.css",
+  "output": "./docs/common.css",
   "autoprefixer": {
     "browsers": [
       "last 2 versions"

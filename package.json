@@ -3,10 +3,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
-    "watch:css": "node-sass ./source/sass/common.scss ./css/common.css -w --output-style expanded",
+    "watch:css": "node-sass ./source/sass/common.scss ./docs/common.css -w --output-style expanded",
     "watch:js": "gulp webpack && gulp watch:js",
     "run:postcss": "postcss -c .postcssrc.json",
-    "build": "gulp pug:build && node-sass ./source/sass/common.scss ./css/common.css && postcss -c .postcssrc.json && gulp webpack:prod",
+    "build": "gulp pug:build && node-sass ./source/sass/common.scss ./docs/common.css && postcss -c .postcssrc.json && gulp webpack:prod",
     "lint:js": "eslint ./source/js",
     "lint:css": "stylelint ./source/sass/**.scss"
   },

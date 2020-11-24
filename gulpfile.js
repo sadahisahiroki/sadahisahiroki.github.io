@@ -16,16 +16,16 @@ const webpack = require("webpack");
 const webpackDevConfig = require("./webpack.dev");
 const webpackProdConfig = require("./webpack.prod");
 
-const php = require("gulp-connect-php")
+// const php = require("gulp-connect-php")
 
 // webpack
 gulp.task('webpack', function() {
   return webpackStream(webpackDevConfig, webpack)
-    .pipe(gulp.dest("./"));
+    .pipe(gulp.dest("./docs/"));
 });
 gulp.task('webpack:prod', function() {
   return webpackStream(webpackProdConfig, webpack)
-    .pipe(gulp.dest("./"));
+    .pipe(gulp.dest("./docs/"));
 });
 
 gulp.task('watch:js', function(){
@@ -50,18 +50,11 @@ gulp.task('watch:js', function(){
 
 // server
 gulp.task('serve', function(done) {
-  return php.server({
-    base: './',
-    port: 8000
-  }, () => {
-    server.init({
-      proxy: "localhost:8000",
-      // port: 8000,
-      // open: "external",
-      notify: false
-    });
-    done();
+  return server.init({
+    server: "./docs",
+    notify: false
   });
+  done();
 });
 
 // pug
@@ -73,7 +66,7 @@ gulp.task('pug', function() {
     .pipe(pug({
       pretty: true
     }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 // pug
@@ -82,7 +75,7 @@ gulp.task('pug:build', function() {
     .pipe(pug({
       pretty: true
     }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 gulp.task("pug-watch", function() {
