@@ -3,15 +3,15 @@
 // mixin
 //
 ////////////////////
-@mixin sp-width($w: 580vw) {
-  width: $w/640*100;
-  margin-right: auto;
-  margin-left: auto;
+@mixin sp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
 }
-@mixin pc-width($w: 970px) {
-  width: $w;
-  margin-right: auto;
-  margin-left: auto;
+@mixin pc {
+  @media print, screen and (min-width: 768px) {
+    @content;
+  }
 }
 
 // 中央寄せ

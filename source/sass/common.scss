@@ -19,7 +19,7 @@
 // libs
 //
 //
-@import "libs/aos/aos";
+@import 'libs/aos/aos';
 
 //
 // components
@@ -33,5 +33,5 @@
 //
 //
 .index {
-  @import 'pages/index/index';
+  @import 'pages/index';
 }

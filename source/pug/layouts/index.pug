@@ -1,5 +1,6 @@
 - url = "https://sadahisahiroki.github.io"
-- version = "?v1.0.0"
+- version = "?v2.0.0";
+- rootPath = "./";
 
 block setting
 
@@ -26,13 +27,19 @@ html(lang='ja' prefix="og: http://ogp.me/ns#")
     meta(property='og:url', content= url + canonical)
     //- meta(name='twitter:card', content='summary_large_image')
     link(href= rootPath + 'css/common.css' + version, rel='stylesheet', media='all')
-    script(src= rootPath + "js/three.min.js", defer)
+    script(src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js" defer)
     script(src= rootPath + "js/common.js" + version, defer)
   body#body(class= currentPage)
     a.hidden(href="#main") 本文へスキップ
     //- include ../partial/components/header.pug
     main.main#main
+      .main__bg.
+        <!-- 
+          Photo by Altanbagana Jargal on Unsplash
+
+          https://unsplash.com/@baganaa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText
+        -->
       block main
-    #canvas.canvas
+    //- #canvas.canvas
     //- include ../partial/components/footer.pug
-    include ../partial/glsl.pug
+    //- include ../partial/glsl.pug
