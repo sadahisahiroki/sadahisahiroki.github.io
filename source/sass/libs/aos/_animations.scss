@@ -4,60 +4,6 @@ $aos-distance: 5px !default;
 @media screen {
   html:not(.no-js) {
     /**
-    * custom
-    *
-    */
-
-    [data-aos^='custom'][data-aos^='custom'] {
-      overflow: hidden;
-
-      > span {
-        overflow: hidden;
-        display: inline-block;
-        position: relative;
-        transform: translateX(-100%);
-      }
-      span span {
-        background-color: #000;
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-      }
-
-      &.aos-animate {
-        > span {
-          animation: customFadeIn .3s cubic-bezier(0.075, 0.82, 0.165,1) forwards;
-        }
-        span span {
-          animation: customFadeIn2 1s cubic-bezier(0.075, 0.82, 0.165,1) .4s forwards;
-        }
-      }
-
-      @keyframes customFadeIn {
-        0% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-      @keyframes customFadeIn2 {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(100%);
-        }
-      }
-    }
-
-
-
-
-    /**
     * Fade animations:
     * fade
     * fade-up, fade-down, fade-left, fade-right
@@ -126,23 +72,23 @@ $aos-distance: 5px !default;
     }
 
     [data-aos='zoom-in'] {
-      transform: scale(.6);
+      transform: scale(.99);
     }
 
     [data-aos='zoom-in-up'] {
-      transform: translate3d(0, $aos-distance, 0) scale(.6);
+      transform: translate3d(0, $aos-distance, 0) scale(.99);
     }
 
     [data-aos='zoom-in-down'] {
-      transform: translate3d(0, -$aos-distance, 0) scale(.6);
+      transform: translate3d(0, -$aos-distance, 0) scale(.99);
     }
 
     [data-aos='zoom-in-right'] {
-      transform: translate3d(-$aos-distance, 0, 0) scale(.6);
+      transform: translate3d(-$aos-distance, 0, 0) scale(.99);
     }
 
     [data-aos='zoom-in-left'] {
-      transform: translate3d($aos-distance, 0, 0) scale(.6);
+      transform: translate3d($aos-distance, 0, 0) scale(.99);
     }
 
     [data-aos='zoom-out'] {

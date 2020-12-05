@@ -24,7 +24,9 @@ $aos-easing: (
 
   ease-in-quart: cubic-bezier(.55, .085, .68, .53),
   ease-out-quart: cubic-bezier(.25, .46, .45, .94),
-  ease-in-out-quart: cubic-bezier(.455, .03, .515, .955)
+  ease-in-out-quart: cubic-bezier(.455, .03, .515, .955),
+
+  custom-ease: cubic-bezier(0, 0.55, 0.45, 1) 
 );
 
 // Easings implementations

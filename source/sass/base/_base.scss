@@ -10,69 +10,21 @@
 }
 
 html {
-  font-family: MyYuGothic, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;  
   line-height: 1.6;
-  color: #333;
+  color: #fff;
   box-sizing: border-box;
   font-size: 62.5%;
-  // &:before {
-  //   @include pseudo;
-  //   @include center;
-  //   position: fixed;
-  //   z-index: 100;
-  //   width: 1px;
-  //   height: 100vh;
-  //   background-color: rgba(0, 0, 0, .1);
-  // }
 }
 
 body {
   width: 100%;
   font-size: 1.4rem;
-  // @media screen and (max-width: 767px) {
-  //   &:before {
-  //     @include pseudo;
-  //     @include center;
-  //     position: fixed;
-  //     z-index: 100;
-  //     width: 1px;
-  //     height: 100vh;
-  //     background-color: rgba(0, 0, 0, .1);
-  //     margin-left: 30vw/640*100;
-  //   }
-  //   &:after {
-  //     @include pseudo;
-  //     @include center;
-  //     position: fixed;
-  //     z-index: 100;
-  //     width: 1px;
-  //     height: 100vh;
-  //     background-color: rgba(0, 0, 0, .1);
-  //     margin-right: 30vw/640*100;
-  //   }
-  // }
-  // @media print, screen and (min-width: 768px) {
-  //   &:before {
-  //     @include pseudo;
-  //     @include center;
-  //     position: fixed;
-  //     z-index: 100;
-  //     width: 1px;
-  //     height: 100vh;
-  //     background-color: rgba(0, 0, 0, .1);
-  //     left: -970px;
-  //   }
-  //   &:after {
-  //     @include pseudo;
-  //     @include center;
-  //     position: fixed;
-  //     z-index: 100;
-  //     width: 1px;
-  //     height: 100vh;
-  //     background-color: rgba(0, 0, 0, .1);
-  //     right: -970px;
-  //   }
-  // }
 }
 
 @media print, screen and (min-width: 768px) {
@@ -148,7 +100,7 @@ img {
 //
 //
 a {
-  color: #000;
+  color: #fff;
   border-bottom: 1px dashed;
   &:hover, &:focus, &:active, {
     border: none;

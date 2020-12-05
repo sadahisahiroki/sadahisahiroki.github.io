@@ -86,9 +86,14 @@ gulp.task("watch", function() {
   return gulp.watch("./source/**/*", gulp.task("reload"));
 });
 
+gulp.task("copy:image", function() {
+  return gulp.src("./source/img/**/*").pipe(gulp.dest('./docs/img/'));
+});
+
+
 gulp.task('reload', function(done) {
   server.reload();
   done();
 });
 
-gulp.task('default', gulp.parallel("pug-watch", 'serve', "watch"));
+gulp.task('default', gulp.parallel("copy:image", "pug-watch", 'serve', "watch"));
