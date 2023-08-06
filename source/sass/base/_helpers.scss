@@ -1,0 +1,72 @@
+////////////////////
+//
+// helper
+//
+////////////////////
+@include pc {
+  .sp {
+    display: none !important;
+  }
+}
+
+@include sp {
+  .pc {
+    display: none !important;
+  }
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  width: 1px;
+  height: 1px;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+.tracking-normal {
+  letter-spacing: 0em;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+.font-bold {
+  font-weight: bold;
+}
+.font-small {
+  font-size: 0.875em;
+}
+.font-smaller {
+  font-size: 0.75em;
+}
+.font-smallest {
+  font-size: 0.625em;
+}
+.font-large {
+  font-size: 1.125em;
+}
+.font-larger {
+  font-size: 1.25em;
+}
+.font-largest {
+  font-size: 1.375em;
+}

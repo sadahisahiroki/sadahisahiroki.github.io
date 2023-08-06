@@ -1,0 +1,33 @@
+// size
+$vw: 0.13333 * 2;
+
+// color
+$color-black: #000;
+
+// space
+:root {
+  --ratio: 1.5;
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  @for $i from 1 through 10 {
+    $j: $i - 1;
+    --s#{$i}: calc(var(--s#{$j}) * var(--ratio));
+  }
+}
+
+$s-3: var(--s-3);
+$s-2: var(--s-2);
+$s-1: var(--s-1);
+$s0: var(--s0);
+$s1: var(--s1);
+$s2: var(--s2);
+$s3: var(--s3);
+$s4: var(--s4);
+$s5: var(--s5);
+$s6: var(--s6);
+$s7: var(--s7);
+$s8: var(--s8);
+$s9: var(--s9);
+$s10: var(--s10);

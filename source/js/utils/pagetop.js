@@ -1,31 +1,33 @@
-const browserStateChange = require("./browserStateChange");
+export default function(el, threshold) {
+  let btn = document.querySelector(el);
 
-const pagetop = (el, threshold) => {
-  /**
-  *
-  * jQueryDOM
-  *
-  */
-  const $btn = $(el);
+  if ( btn === null ) {
+    return;
+  }
+
+  btn.style.transition = 'opacity .2s cubic-bezier(0, 0.55, 0.45, 1)';
 
   function checkEdge() {
     if(window.pageYOffset > threshold) {
-      $btn.animate({
-        opacity: 1
-      }, {
-        duration: 125
-      });
+      btn.style.opacity = '1';
     }
     else {
-      $btn.animate({
-        opacity: 0
-      }, {
-        duration: 125
-      });
+      btn.style.opacity = '0';
     }
   }
 
-  browserStateChange.scroll(checkEdge);
-};
+  checkEdge();
+  let timeoutId ;
 
-module.exports = pagetop;
+  window.addEventListener( "scroll", function () {
+    // setTimeout()がセットされていたら無視
+    if ( timeoutId ) return ;
+
+    timeoutId = setTimeout( function () {
+      timeoutId = 0 ;
+      checkEdge();
+
+      // 処理内容
+    }, 1000 / 30 ) ;
+  } ) ;
+}
