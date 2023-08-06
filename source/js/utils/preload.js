@@ -1,10 +1,10 @@
 /**
 * preload
 *
-* プリロード。
+* プリロード。別途preload.jsが必要
 *
 */
-const preload = (manifest, progress, complete) => {
+export default function(manifest, progress, complete) {
   /**
   * preload
   *
@@ -24,6 +24,4 @@ const preload = (manifest, progress, complete) => {
   // function handleComplete() {
   //   // complete
   // }
-};
-
-module.exports = preload;
+}

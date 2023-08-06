@@ -1,0 +1,32 @@
+////////////////////
+//
+// mixin
+//
+////////////////////
+@mixin sp {
+  @media screen and (max-width: 40em) {
+    @content;
+  }
+}
+@mixin pc($size: "41em") {
+  @media print, screen and (min-width: $size) {
+    @content;
+  }
+}
+
+// 中央寄せ
+@mixin center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}

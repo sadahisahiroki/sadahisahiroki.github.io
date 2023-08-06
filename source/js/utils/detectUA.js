@@ -4,16 +4,16 @@
 * UAを返す、cssuaだとandroid tabletが判別できないため
 *
 */
+export default function() {
+  const isIPad = /iPad|Macintosh/i.test(navigator.userAgent) && 'ontouchend' in document;
 
-const detectUA = () => {
-  const ua = window.navigator.userAgent.toLowerCase();
-
-  if (cssua.ua.mobile === "iphone" || (cssua.ua.mobile === "android" && ua.indexOf("mobile") > 0)) {
+  if ( navigator.userAgent.match(/iPhone|Android.+Mobile/) ) {
     return "sp";
   }
-  else if (cssua.ua.mobile === "ipad" || (cssua.ua.mobile === "android" && ua.indexOf("mobile") < 0)) {
+  else if ( isIPad || navigator.userAgent.match(/Android/) ) {
     return "tablet";
   }
-};
-
-module.exports = detectUA;
+  else {
+    return "pc";
+  }
+}
