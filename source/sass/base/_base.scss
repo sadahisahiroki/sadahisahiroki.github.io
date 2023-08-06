@@ -1,0 +1,99 @@
+////////////////////
+//
+// base
+//
+////////////////////
+
+html {
+  font-size: 62.5%;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 55.98px + 75;
+}
+@include pc {
+  html {
+    scroll-padding-top: 5.598rem + 5;
+  }
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans JP", "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  color: $color-black;
+  background-color: #fdfdfc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+strong {
+  font-weight: bold;
+  font-style: normal;
+}
+
+small,
+sup {
+  font-size: 0.5em;
+  display: inline-block;
+}
+
+//
+// ul,ol,dl
+//
+//
+ul,
+dl,
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+//
+// img
+//
+//
+img {
+  width: 100%;
+  height: auto;
+}
+
+// @media screen and (max-width: 767px) {
+// }
+@include pc {
+  img {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+//
+// a
+//
+//
+a {
+  display: block;
+
+  // transition: opacity 0.2s ease;
+  text-decoration: none;
+  color: $color-black;
+
+  // @include hover {
+  //   opacity: 0.6;
+  // }
+}
