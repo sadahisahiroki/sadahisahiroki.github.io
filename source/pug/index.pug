@@ -6,7 +6,7 @@ block setting
 
   - title = "Sadahisa Hiroki"
   - canonical = ""
-  - description = "Sadahisa Hiroki is a Japanese web engineer who works with HTML, CSS, JS and WordPress customization. He describes himself as a markup engineer with a bright eye for CSS anyway."
+  - description = ""
   - type = "website"
   
 //- ////////////////////
@@ -14,7 +14,7 @@ block setting
 block main
   h1.js-target-element
     em.tracking-widest Sadahisa Hiroki
-    span とにかくCSSに明るいマークアップエンジニア
+    span とにかくCSSに明るいマークアップエンジニアです。
   .container
     nav.nav 
       h2.hidden サイト内ナビゲーション
@@ -27,7 +27,7 @@ block main
           a(href="#works") Works
         li.nav__list-item.js-blur-element 
           a(href="#interest") Interest  
-        li.nav__list-item.js-blur-element 
+        //- li.nav__list-item.js-blur-element 
           a(href="#contact") Contact  
     .sec__wrapper
       section
@@ -36,9 +36,9 @@ block main
           span 略歴 
         .stack-sm
           p.js-blur-element 
-            | 大学卒業後、紆余曲折を経て大阪のデザイン会社に就職。以後9年間、Webサイトのマークアップ・フロントエンド実装を担当。
+            | 大学卒業後、紆余曲折を経て大阪のデザイン会社に就職。以後10年間、Webサイトのマークアップ・フロントエンド・CMS実装を担当。
           p.js-blur-element 
-            | 全国のフロントエンドエンジニアと厳密に比較したことがないため自称ですが、とにかくCSSに明るいです(おそらく)(たぶん)。
+            | マークアップとCSSが好きです。
       section
         h2.js-blur-element#lang  
           | Language
@@ -74,50 +74,25 @@ block main
             dt
               | その他
             dd
+              | Visual Studio Code
+            dd
               | SourceTree
+            dd
+              | Adobe XD/Photoshop
       section 
         h2.js-blur-element#works
           | Works
-          span ふだんの仕事
-        ul 
-          li.js-blur-element
-            | コーポレート/ブランドサイト
-          li.js-blur-element
-            | 単発ページ
-            br
-            span.font-small
-              | 企業サイトに組み込むようなものが多いです。
-              br
-              | シンプルな内容からアニメーションを伴う特設ページまで。
-          li.js-blur-element
-            | その他
-            br
-            span.font-small
-              | クライアントの環境や制約にあわせてのマークアップ・フロントエンドカスタマイズなど。
-        .stack-sm
-          p.js-blur-element 
-            | React/Vueを使って、あるいはWebGLを使ってモリモリと動くWebサイト、といったものはあまりつくっていません。
-          p.js-blur-element 
-            | ふつうのWebサイトを、クライアントの要望や環境に合わせて、ふつうにつくることが多いです。
+          span これまでの仕事
+        p.js-blur-element  
+          | 百貨店の催事特設ページや衣料品のブランドサイト(CSS/JSを使ったインタラクションやアニメーションの実装)、小規模(Max100ページほど)なコーポレートサイト(静的もしくはWordPressでのテーマ開発)、その他LPページを制作しています。
       section 
         h2.js-blur-element#interest 
           | Interest
           span 興味のあること
         ul 
           li.js-blur-element
-            | デザインを、HTMLとCSSとJSによってブラウザにて表現可能なかたちに変換する過程全般。
+            | デザインをブラウザ上に実装する過程全般。
           li.js-blur-element 
             | Webサイトにおけるデザインの規則性、整合性について考え実装する過程全般。
           li.js-blur-element 
             | Webらしいデザインについて考えること。
-        .stack-sm
-          p.js-blur-element 
-            | エンジニアリングよりはデザインのほうが好きかもしれません。
-          p.js-blur-element 
-            | あと小説と脚本がちょっとだけ書けます。
-      section 
-        h2#contact 
-          | Contact
-          span おたよりはこちら
-        p 
-          a(href="404" target="_blank" rel="noopener noreferrer") URL 

@@ -5,7 +5,7 @@
 ////////////////////
 
 html {
-  font-size: 62.5%;
+  font-size: max(62.5%, 1.25vw);
 
   scroll-behavior: smooth;
   scroll-padding-top: 55.98px + 75;
@@ -22,7 +22,7 @@ body {
   font-size: 1.3rem;
   line-height: 1.8;
   box-sizing: border-box;
-  padding: 0 2rem;
+  padding: $s1;
   color: $color-black;
   background-color: #fdfdfc;
 }

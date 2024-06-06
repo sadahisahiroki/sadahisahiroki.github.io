@@ -12,6 +12,7 @@
 /archive
 /sql
 /public/*
+/docs/*
 !/public/system/
 /source/statics/docs/personnel/
 

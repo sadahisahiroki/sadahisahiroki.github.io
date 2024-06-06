@@ -8,19 +8,30 @@
 h1 {
   position: sticky;
   top: 0;
-  padding-top: 2.5rem;
   width: fit-content;
   span {
     font-size: 1.4rem;
     display: block;
   }
 }
+@include pc {
+  h1 {
+    top: $s1;
+  }
+}
 
 .nav {
-  margin-top: $s2;
+  margin-block-start: $s2;
   &__list {
     line-height: 1.4;
     font-size: 2rem;
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
+    }
   }
 }
 @include pc {
@@ -28,25 +39,26 @@ h1 {
     position: sticky;
     top: 5.598rem + 5;
     width: fit-content;
+    margin-block-start: 0;
   }
 }
 
 .container {
   > * + * {
-    margin-top: $s7;
+    margin-top: $s4;
   }
 }
 
 .sec__wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: $s7 0;
+  gap: $s4 0;
   padding-bottom: $s7;
 }
 @include pc {
   .sec__wrapper {
     width: calc(100% - 10.09rem - var(--s5));
-    margin: 0 0 0 auto;
+    margin: -10vw 0 0 auto;
     gap: $s6;
     align-items: flex-start;
   }
@@ -54,16 +66,15 @@ h1 {
 
 h2 {
   span {
-    font-size: 1.4rem;
-    display: block;
-    margin-top: $s-1;
+    font-size: 1.2rem;
+    margin-inline-start: $s0;
   }
 }
 
 section {
   display: flex;
   flex-wrap: wrap;
-  gap: $s3 0;
+  gap: $s1 0;
   h2 {
     width: 100%;
   }
