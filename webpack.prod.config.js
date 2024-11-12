@@ -1,5 +1,6 @@
-let webpack = require("webpack");
-module.exports = {
+import webpack from 'webpack';
+
+export default {
   mode: "production",
 
   // メインのJS
@@ -10,19 +11,16 @@ module.exports = {
   output: {
     filename: "./js/[name].js"
   },
+
   // plugins: [
   //   new webpack.BannerPlugin({
   //     banner: `
-  //       /*! vue@3.2.40 | Copyright (c) 2018-present, Yuxi (Evan) You | https://github.com/vuejs/vue/blob/dev/LICENSE */
+  //       /*! splide | Copyright (c) 2022 Naotoshi Fujita | https://github.com/Splidejs/splide/blob/master/LICENSE */
   //     `,
   //     raw: true
   //   })
   // ],
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm-bundler.js',
-    }
-  },
+
   module: {
     rules: [
       {

@@ -1,5 +1,4 @@
-let webpack = require("webpack");
-module.exports = {
+export default {
   mode: "development",
 
   // メインのJS
@@ -10,11 +9,7 @@ module.exports = {
   output: {
     filename: "./js/[name].js"
   },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm-bundler.js',
-    }
-  },
+
   module: {
     rules: [
       {
@@ -31,4 +26,4 @@ module.exports = {
       }
     ]
   }
-}
+};

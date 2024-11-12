@@ -1,127 +1,93 @@
-.js-blur-element {
-  transition: filter 0.6s;
-}
-.js-blur-element.is-blur {
-  filter: blur(2px);
-}
-
-h1 {
-  position: sticky;
-  top: 0;
-  width: fit-content;
-  span {
-    font-size: 1.4rem;
-    display: block;
-  }
-}
-@include pc {
-  h1 {
-    top: $s1;
-  }
-}
-
-.nav {
-  margin-block-start: $s2;
-  &__list {
-    line-height: 1.4;
-    font-size: 2rem;
-    a {
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
+.square {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #252525;
+  transition-property: width, height, background-color;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  justify-self: center;
+  &-container {
+    position: sticky;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    width: 100%;
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+    grid-template-columns: repeat(4, 1fr);
+    pointer-events: none;
+    &.--state {
+      &-1 .square {
+        width: 100dvw;
+        height: 2px;
+      }
+      &-2 .square {
+        width: $s2;
+        height: $s2;
+      }
+      &-3 .square {
+        width: 2px;
+        height: $s4;
       }
     }
-  }
-}
-@include pc {
-  .nav {
-    position: sticky;
-    top: 5.598rem + 5;
-    width: fit-content;
-    margin-block-start: 0;
   }
 }
 
 .container {
+  padding: $s2;
+  padding-block-end: 100dvh;
+  margin-inline: auto;
+  width: fit-content;
   > * + * {
-    margin-top: $s4;
+    margin-block-start: 100dvh;
   }
-}
-
-.sec__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $s4 0;
-  padding-bottom: $s7;
 }
 @include pc {
-  .sec__wrapper {
-    width: calc(100% - 10.09rem - var(--s5));
-    margin: -10vw 0 0 auto;
-    gap: $s6;
-    align-items: flex-start;
-  }
-}
-
-h2 {
-  span {
-    font-size: 1.2rem;
-    margin-inline-start: $s0;
+  .container {
+    max-width: 40em;
   }
 }
 
 section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $s1 0;
   h2 {
-    width: 100%;
+    font-weight: 700;
+  }
+  > * + * {
+    margin-block-start: $s0;
   }
   dl {
-    width: 100%;
     > * + * {
-      margin-top: $s0;
+      margin-block-start: $s2;
+    }
+    dt {
+      font-weight: 700;
+      text-decoration: underline;
     }
     dd {
-      margin-left: 1em;
-      &::before {
-        content: "-";
-        margin-right: 0.5em;
-      }
-    }
-  }
-
-  ul {
-    > * + * {
-      margin-top: $s-3;
-    }
-    li {
-      text-indent: -1em;
-      padding-left: 1em;
-      &::before {
-        content: "-";
-        margin-right: 0.5em;
-      }
-    }
-  }
-}
-@include pc {
-  section {
-    max-width: 35em;
-    dl {
-      display: flex;
-      flex-wrap: wrap;
-      gap: $s3 $s4;
       > * + * {
-        margin-top: 0;
+        margin-block-start: $s0;
       }
     }
   }
 }
 
-.stack-sm {
-  > * + * {
-    margin-top: $s0;
+.site {
+  > h3 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 $s0;
+    &::before {
+      content: "-";
+    }
+  }
+  &-body {
+    margin-block-start: $s0;
+  }
+  &-container {
+    margin-block-start: $s3;
+    > * + * {
+      margin-block-start: $s4;
+    }
   }
 }

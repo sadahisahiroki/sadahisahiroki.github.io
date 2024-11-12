@@ -6,25 +6,16 @@
 
 html {
   font-size: max(62.5%, 1.25vw);
-
-  scroll-behavior: smooth;
-  scroll-padding-top: 55.98px + 75;
-}
-@include pc {
-  html {
-    scroll-padding-top: 5.598rem + 5;
-  }
+  // font-size: 62.5%;
 }
 
 body {
-  font-family: "Montserrat", "Noto Sans JP", "Helvetica Neue", Arial,
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.8;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: max(1.4rem, 14px);
+  line-height: 1.5;
   box-sizing: border-box;
-  padding: $s1;
   color: $color-black;
-  background-color: #fdfdfc;
 }
 
 h1,
@@ -34,7 +25,6 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  line-height: 1.4;
 }
 
 strong {
@@ -80,20 +70,4 @@ img {
 button {
   border: 0;
   background-color: transparent;
-}
-
-//
-// a
-//
-//
-a {
-  display: block;
-
-  // transition: opacity 0.2s ease;
-  text-decoration: none;
-  color: $color-black;
-
-  // @include hover {
-  //   opacity: 0.6;
-  // }
 }

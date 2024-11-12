@@ -4,7 +4,7 @@ block setting
   - rootPath = "./"
   - currentPage = "index"
 
-  - title = "Sadahisa Hiroki"
+  - title = "■■■■"
   - canonical = ""
   - description = ""
   - type = "website"
@@ -12,87 +12,156 @@ block setting
 //- ////////////////////
 
 block main
-  h1.js-target-element
-    em.tracking-widest Sadahisa Hiroki
-    span とにかくCSSに明るいマークアップエンジニアです。
+  #void1
+  .square-container
+    .square
+    .square
+    .square
+    .square
   .container
-    nav.nav 
-      h2.hidden サイト内ナビゲーション
-      ul.nav__list
-        li.nav__list-item.js-blur-element 
-          a(href="#profile") Profile
-        li.nav__list-item.js-blur-element 
-          a(href="#lang") Language  
-        li.nav__list-item.js-blur-element 
-          a(href="#works") Works
-        li.nav__list-item.js-blur-element 
-          a(href="#interest") Interest  
-        //- li.nav__list-item.js-blur-element 
-          a(href="#contact") Contact  
-    .sec__wrapper
-      section
-        h2.js-blur-element#profile  
-          | Profile
-          span 略歴 
-        .stack-sm
-          p.js-blur-element 
-            | 大学卒業後、紆余曲折を経て大阪のデザイン会社に就職。以後10年間、Webサイトのマークアップ・フロントエンド・CMS実装を担当。
-          p.js-blur-element 
-            | マークアップとCSSが好きです。
-      section
-        h2.js-blur-element#lang  
-          | Language
-          span 使用言語・ツールなど
-        dl 
-          div.js-blur-element 
-            dt
-              | 言語 
-            dd
-              | HTML/Pug
-            dd
-              | CSS/Sass
-            dd
-              | JavaScript
-          div.js-blur-element 
-            dt
-              | JSフレームワーク
-            dd
-              | Vue.js
-          div.js-blur-element 
-            dt
-              | CMS
-            dd
-              | WordPress
-          div.js-blur-element 
-            dt
-              | タスクランナー
-            dd
-              | Gulp
-            dd
-              | Webpack
-          div.js-blur-element 
-            dt
-              | その他
-            dd
-              | Visual Studio Code
-            dd
-              | SourceTree
-            dd
-              | Adobe XD/Photoshop
-      section 
-        h2.js-blur-element#works
-          | Works
-          span これまでの仕事
-        p.js-blur-element  
-          | 百貨店の催事特設ページや衣料品のブランドサイト(CSS/JSを使ったインタラクションやアニメーションの実装)、小規模(Max100ページほど)なコーポレートサイト(静的もしくはWordPressでのテーマ開発)、その他LPページを制作しています。
-      section 
-        h2.js-blur-element#interest 
-          | Interest
-          span 興味のあること
-        ul 
-          li.js-blur-element
-            | デザインをブラウザ上に実装する過程全般。
-          li.js-blur-element 
-            | Webサイトにおけるデザインの規則性、整合性について考え実装する過程全般。
-          li.js-blur-element 
-            | Webらしいデザインについて考えること。
+    section#info(itemscope, itemtype="https://schema.org/Person")
+      h2 基本情報
+      dl 
+        div
+          dt 名前: 
+          dd 
+            span(itemprop="name") サダヒサ ヒロキ
+        div
+          dt 年齢: 
+          dd 
+            span(itemprop="age") 33
+        div
+          dt 自己紹介:
+          dd(itemprop="description") 
+            p
+              | マークアップエンジニアです。
+              br
+              | Webサイト構築におけるマークアップ(HTML/CSS/JS)、CMS実装(WordPress)などを行っています。
+            p
+              | ある情報の塊を視覚的に、またサイト全体として整合性/統一性のあるかたちに構造化していく過程、としてのマークアップが好きです。
+        div
+          dt 趣味:
+          dd 
+            p(itemprop="description")
+              | 映画、小説、シンセサイザー
+    section#lang
+      h2 言語/ツール類
+      dl 
+        div
+          dt 言語: 
+          dd 
+            | HTML,CSS,JavaScript,Pug,Scss
+        div
+          dt タスクランナー: 
+          dd 
+            | Gulp,Webpack,npm-scripts
+        div
+          dt エディタ: 
+          dd VSCode
+        div
+          dt バージョン管理: 
+          dd Git,SourceTree,Bitbucket
+        div
+          dt デザインツール: 
+          dd Adobe XD,Photoshop
+    section#sites
+      h2 制作したサイト
+      p 
+        | ※URLは面談時お伝えします
+      ul.site-container
+        li.site
+          h3 
+            | 株式会社カイロス ウェブサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装)
+              br
+              | URL: 
+              a(href="https://www.kairos.co.jp/" target="_blank" rel="noopener noreferrer")
+                | https://www.kairos.co.jp/ 
+        li.site
+          h3 
+            | ベビー用品ブランド 公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装)
+        li.site
+          h3 
+            | エンジニアリングサービス・ファシリティマネジメントを行う企業の公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ(静的Webサイト、50ページ程度)
+        li.site
+          h3 
+            | 食品メーカー(ヨーグルト・乳製品)の企業公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ(静的Webサイト、100ページ程度)
+        li.site
+          h3 
+            | 北欧の暮らしに根差した複合施設の公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装)
+        li.site
+          h3 
+            | 電子部品・電子機器メーカー 新卒者向けセミナーの紹介ページ
+          .site-body
+            p 
+              | マークアップ(静的Webサイト、セミナー絞込部分でVue.jsを使用)
+        li.site
+          h3 
+            | 大阪城内にある神社の公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装)
+        li.site
+          h3 
+            | 電機メーカー DX関連社員紹介ページ
+          .site-body
+            p 
+              | マークアップ(静的Webサイト、社員絞込部分でVue.jsを使用)
+        li.site
+          h3 
+            | 鉄鋼メーカー グループ子会社の公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装)
+        li.site
+          h3 
+            | 鉄鋼メーカー グループ子会社の公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装)
+        li.site
+          h3 
+            | 食品加工メーカー グループ子会社の企業の公式ウェブサイト
+          .site-body
+            p 
+              | マークアップ(静的Webサイト、30ページ程度)
+        li.site
+          h3 
+            | 総合商社 グループ内デジタル関連サービス ポータルサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装、BBPress実装等)
+        li.site
+          h3 
+            | 総合商社 グループ内デジタル関連サービス ポータルサイト
+          .site-body
+            p 
+              | マークアップ、WordPress実装(スクラッチテーマから実装、BBPress実装等)
+        li.site
+          h3 
+            | 繊維メーカー ECサイト一部改修
+          .site-body
+            p 
+              | 改修画面のマークアップ
+        li.site
+          h3 
+            | LP
+          .site-body
+            ul 
+              li ・百貨店の催事/マークアップ(アニメーション・インタラクションを伴う)
+              li ・繊維メーカー ECサイト内
+    #void2

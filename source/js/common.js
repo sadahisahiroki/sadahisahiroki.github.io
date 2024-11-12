@@ -1,43 +1,50 @@
-let isScrolling = false;
+document.addEventListener('DOMContentLoaded', function () {
+  const squareContainer = document.querySelector('.square-container'); // 複数の.square要素を取得
+  const targets = {
+    info: document.getElementById('info'),
+    lang: document.getElementById('lang'),
+    sites: document.getElementById('sites'),
+    void1: document.getElementById('void1'),
+    void2: document.getElementById('void2')
+  };
 
-function throttleScroll() {
-  if (!isScrolling) {
-    isScrolling = true;
+  const options = {
+    root: null, // ビューポートを基準
+    rootMargin: '0px',
+    threshold: 0 // 交差する割合
+  };
 
-    requestAnimationFrame(() => {
-      handleScroll();
-      isScrolling = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      let stateClass; // デフォルト状態
+
+      if (entry.isIntersecting) {
+        switch (entry.target.id) {
+          case 'info':
+            stateClass = '--state-1';
+            break;
+          case 'lang':
+            stateClass = '--state-2';
+            break;
+          case 'sites':
+            stateClass = '--state-3';
+            break;
+          case 'void1':
+            stateClass = '--state-0';
+            break;
+          case 'void2':
+            stateClass = '--state-0';
+            break;
+          default:
+            stateClass = '--state-0';
+        }
+        squareContainer.className = `square-container ${stateClass}`;
+      }
     });
-  }
-}
+  }, options);
 
-function blurToOverlappingElements(targetElement, className) {
-  // ターゲット要素の座標とサイズを取得
-  const targetRect = targetElement.getBoundingClientRect();
-
-  // 重なっている要素を取得
-  const overlappingElements = document.querySelectorAll('.js-blur-element');
-
-  // 重なっている要素に対してクラス名を追加
-  overlappingElements.forEach(element => {
-    const elementRect = element.getBoundingClientRect();
-    const isOverlapping = !(targetRect.right < elementRect.left ||
-      targetRect.left > elementRect.right ||
-      targetRect.bottom < elementRect.top ||
-      targetRect.top > elementRect.bottom);
-    if (isOverlapping) {
-      element.classList.add(className);
-    }
-    else {
-      element.classList.remove(className);
-    }
+  // 各ターゲット要素を監視
+  Object.values(targets).forEach(target => {
+    observer.observe(target);
   });
-}
-
-function handleScroll() {
-  const targetElement = document.querySelector('.js-target-element');
-  blurToOverlappingElements(targetElement, 'is-blur');
-}
-
-// スクロールイベントをスロットルする
-window.addEventListener('scroll', throttleScroll);
+});
